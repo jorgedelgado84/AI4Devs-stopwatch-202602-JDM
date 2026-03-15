@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stopwatch</title>
+  <title>Cronómetro / Stopwatch</title>
   <style>
     * {
       box-sizing: border-box;
@@ -28,6 +28,34 @@
       gap: 24px;
       width: 100%;
       max-width: 560px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 10px;
+      align-self: flex-end;
+    }
+
+    .lang-switcher button {
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border: 2px solid #888;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #fff;
+      color: #444;
+      transition: background-color 0.15s, color 0.15s;
+      max-width: unset;
+      flex: unset;
+      box-shadow: none;
+      text-shadow: none;
+    }
+
+    .lang-switcher button.active {
+      background-color: #444;
+      color: #fff;
+      border-color: #444;
     }
 
     .display {
@@ -100,14 +128,22 @@
 </head>
 <body>
   <div class="container">
+
+    <div class="lang-switcher" role="group" aria-label="Seleccionar idioma / Select language">
+      <button id="btn-lang-es" class="active" aria-pressed="true">ES</button>
+      <button id="btn-lang-en" aria-pressed="false">EN</button>
+    </div>
+
     <div class="display" role="timer" aria-live="off" aria-label="Cronómetro">
       <span class="time" id="time">00:00:00</span>
       <span class="milliseconds" id="ms">000</span>
     </div>
+
     <div class="buttons">
-      <button id="btn-start" aria-label="Iniciar cronómetro">Start</button>
-      <button id="btn-clear" aria-label="Reiniciar cronómetro">Clear</button>
+      <button id="btn-start" aria-label="Iniciar cronómetro">Iniciar</button>
+      <button id="btn-clear" aria-label="Reiniciar cronómetro">Limpiar</button>
     </div>
+
   </div>
   <script src="script.js"></script>
 </body>

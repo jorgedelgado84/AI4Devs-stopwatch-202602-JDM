@@ -22,6 +22,41 @@
             padding: 20px;
         }
 
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            background: #f0f0f0;
+            color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: #fff;
+            border-color: #764ba2;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -124,6 +159,21 @@
 
         /* Responsive design */
         @media (max-width: 480px) {
+            .header {
+                top: 10px;
+                right: 10px;
+            }
+
+            .language-selector {
+                padding: 6px;
+                gap: 5px;
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+
             .container {
                 gap: 30px;
             }
@@ -144,6 +194,11 @@
         }
 
         @media (max-width: 360px) {
+            .header {
+                position: static;
+                margin-bottom: 20px;
+            }
+
             .container {
                 gap: 20px;
             }
@@ -169,6 +224,13 @@
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="es" type="button" aria-label="Seleccionar idioma español">ES</button>
+            <button class="lang-btn" data-lang="en" type="button" aria-label="Select English language">EN</button>
+        </div>
+    </header>
+
     <main class="container">
         <div class="display-box">
             <div class="time-display" id="display" aria-label="Tiempo transcurrido">00:00:00</div>

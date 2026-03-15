@@ -1,18 +1,18 @@
-# Rol 
-Eres un desarrollador web con mas de 10 años de experiencia.
+# Rol
+Eres un desarrollador web con más de 10 años de experiencia.
 
 # Objetivo
-Se requiere realizar un stopwatch similar al de la imagen res\stopwatch.png,  
-la imagen muestra horas, minutos, segundos y milisegundos en la parte inferior derecha con tres valores
-debe funcionar cuando se presione el boton start y el mismo boton debe cambiar a pausa y a color azul para detener el cronometro, ademas el boton clear debe reiniciar el cronometro
+Se requiere realizar un stopwatch similar al de la imagen res\stopwatch.png,
+la imagen muestra horas, minutos, segundos y milisegundos en la parte inferior derecha con tres valores.
+Debe funcionar cuando se presione el botón Start y el mismo botón debe cambiar a Pausa y a color azul para detener el cronómetro; además, el botón Clear debe reiniciar el cronómetro.
 
 # Requerimientos
-solo javascript puro no agreges librerias de terceros 
-separalo en dos archivos 
-index.html y script.js 
-crea en una carpeta llamada template_claude_jdm donde agregue los archivos
-debe tener un diseño responsivo adaptable para visualizarlo en dispositivos moviles
+Solo JavaScript puro, no agregues librerías de terceros.
+Sepáralo en dos archivos:
+index.html y script.js
+Créalo en una carpeta llamada template_claude_jdm donde se agreguen los archivos.
+Debe tener un diseño responsivo adaptable para visualizarlo en dispositivos móviles.
+El cronómetro debe ser para español e inglés.
 
-
-# revision 
-revisa que el codigo en los dos archivos cumpla con buenas practicas 
+# Revisión
+Revisa que el código en los dos archivos cumpla con buenas prácticas.
