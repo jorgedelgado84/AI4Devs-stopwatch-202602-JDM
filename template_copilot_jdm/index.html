@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cronómetro digital con interfaz responsiva">
+    <title>Cronómetro Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .display-box {
+            background: #f0f0f0;
+            border: 4px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .time-display {
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .milliseconds-display {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            color: #555;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            padding-right: 10px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+            padding: 20px 30px;
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #startBtn {
+            background-color: #00ff00;
+            color: #000;
+        }
+
+        #startBtn:hover {
+            background-color: #00dd00;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0, 255, 0, 0.4);
+        }
+
+        #startBtn:active {
+            transform: translateY(0);
+        }
+
+        #startBtn.paused {
+            background-color: #0099ff;
+            color: #fff;
+        }
+
+        #startBtn.paused:hover {
+            background-color: #0077dd;
+        }
+
+        #clearBtn {
+            background-color: #ff0000;
+            color: #fff;
+        }
+
+        #clearBtn:hover {
+            background-color: #dd0000;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        #clearBtn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .container {
+                gap: 30px;
+            }
+
+            .display-box {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .buttons-container {
+                gap: 15px;
+            }
+
+            .btn {
+                min-width: 100px;
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                gap: 20px;
+            }
+
+            .display-box {
+                padding: 15px;
+            }
+
+            .time-display {
+                font-size: 2rem;
+            }
+
+            .milliseconds-display {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                min-width: 80px;
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="display-box">
+            <div class="time-display" id="display" aria-label="Tiempo transcurrido">00:00:00</div>
+            <div class="milliseconds-display" id="milliseconds" aria-label="Milisegundos">000</div>
+        </div>
+        <div class="buttons-container">
+            <button class="btn" id="startBtn" type="button" aria-label="Iniciar o pausar cronómetro">Iniciar</button>
+            <button class="btn" id="clearBtn" type="button" aria-label="Reiniciar cronómetro">Limpiar</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
